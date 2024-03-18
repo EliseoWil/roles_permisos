@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,8 @@ Route::middleware([
     ////////////////////////////////////////////////////////////////////////////////////////
     Route::get('/profile', [UsuarioController::class, 'profile'])->name('profile');
 });
+
+Route::get('/auth/redirect', [AuthController::class, 'redirect']);
+Route::get('/auth/callback-url', [AuthController::class, 'callback']);
 
 
