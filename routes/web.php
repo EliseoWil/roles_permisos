@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\UsuarioController;
 
 /*
@@ -29,6 +30,7 @@ Route::middleware([
     })->name('dashboard');
     ////////////////////////////////////////////////////////////////////////////////////////
     Route::get('/profile', [UsuarioController::class, 'profile'])->name('profile');
+    Route::resource('/client', ClienteController::class)->names('cliente');
 });
 
 Route::get('/auth/redirect', [AuthController::class, 'redirect']);

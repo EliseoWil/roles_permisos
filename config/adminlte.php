@@ -328,12 +328,24 @@ return [
             'url' => 'profile',
             'icon' => 'fas fa-fw fa-user',
         ],
+
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Cliente',
+            'icon' => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Lista de Clientes',
+                    'route' => 'cliente.index',
+                    'icon_color' => 'cyan',
+                ],
+                [
+                    'text' => 'Nuevo Cliente',
+                    'route' => 'cliente.create',
+                    'icon_color' => 'cyan',
+                ],
+            ],
         ],
-        [
+        /*  [
             'text' => 'multilevel',
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [
@@ -370,7 +382,7 @@ return [
                     'url' => '#',
                 ],
             ],
-        ],
+        ], */
         ['header' => 'labels'],
         [
             'text' => 'important',
@@ -425,7 +437,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -470,12 +482,12 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@11',
                 ],
             ],
         ],
